@@ -58,7 +58,7 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
                 }
             }
         });
-        queue.add(stringRequest);
+        //queue.add(stringRequest);
     }
 
     public String[] getFood() {
