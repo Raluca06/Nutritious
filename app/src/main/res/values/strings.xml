@@ -12,5 +12,6 @@
     <string name="message_no_internet">Cannot establish Internet Connection</string>
     <string name="message_no_internet">Cannot establish Internet Connection</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_one_time_starter">OneTimeStarterActivity</string>
 
 </resources>
