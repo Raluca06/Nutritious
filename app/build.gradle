@@ -25,6 +25,8 @@ dependencies {
 
     //Volley parser
     compile 'com.mcxiaoke.volley:library-aar:1.0.+'
+    compile 'javax.annotation:javax.annotation-api:1.2-b01'
+    compile 'commons-lang:commons-lang:2.6'
     compile files('libs/android-support-v4.jar')
     compile 'com.google.code.gson:gson:2.3'
     compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
