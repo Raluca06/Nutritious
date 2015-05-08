@@ -12,14 +12,24 @@ public class DatabaseManager extends SQLiteOpenHelper {
     // Database Version
     private static final int DATABASE_VERSION = 1;
     // Database Name
-    private static final String DATABASE_NAME = "contactsManager";
+    private static final String DATABASE_NAME = "UserManager";
 
     // Contacts table name
-    private static final String TABLE_PERSONAL_PROFILE = "personalProfile";
+    private static final String TABLE_USER = "user";
 
     // Contacts Table Columns names
-    private static final String KEY_ID = "id";
-    private static final String KEY_NAME = "name";
+    private static final String USER_ID = "id";
+    private static final String USER_NAME = "name";
+    private static final String USER_AGE = "age";
+    private static final String USER_GENDER = "gender";
+    private static final String USER_WEIGHT = "weight";
+    private static final String USER_HEIGHT = "height";
+    private static final String USER_TARGET_WEIGHT = "target_weight";
+    private static final String USER_HEIGHT_MEASURING_UNIT = "height_measuring_unit";
+    private static final String USER_WEIGHT_MEASURING_UNIT = "weight_measuring_unit";
+    private static final String USER_WAKEUP_TIME = "wakeup_time";
+    private static final String USER_NAP_TIME = "nap_time";
+    private static final String USER_AM_PM = "am_pm";
 
     public DatabaseManager(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,31 +42,21 @@ public class DatabaseManager extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
+        // Construct a table for todo items
+        String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
+                + USER_ID + " INTEGER PRIMARY KEY," + USER_NAME + " TEXT,"
+                + USER_AGE + " INTEGER" + USER_GENDER + " TEXT" + USER_WEIGHT + "INTEGER" + USER_HEIGHT + "INTEGER" + USER_TARGET_WEIGHT + "INTEGER" +")";
+        db.execSQL(CREATE_USER_TABLE);
 
     }
 
-    /**
-     * Called when the database needs to be upgraded. The implementation
-     * should use this method to drop tables, add tables, or do anything else it
-     * needs to upgrade to the new schema version.
-     * <p/>
-     * <p>
-     * The SQLite ALTER TABLE documentation can be found
-     * <a href="http://sqlite.org/lang_altertable.html">here</a>. If you add new columns
-     * you can use ALTER TABLE to insert them into a live table. If you rename or remove columns
-     * you can use ALTER TABLE to rename the old table, then create the new table and then
-     * populate the new table with the contents of the old table.
-     * </p><p>
-     * This method executes within a transaction.  If an exception is thrown, all changes
-     * will automatically be rolled back.
-     * </p>
-     *
-     * @param db         The database.
-     * @param oldVersion The old database version.
-     * @param newVersion The new database version.
-     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        if (newVersion == 1) {
+            // Wipe older tables if existed
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
+            // Create tables again
+            onCreate(db);
+        }
     }
 }
