@@ -59,4 +59,5 @@ public class DatabaseManager extends SQLiteOpenHelper {
             onCreate(db);
         }
     }
+
 }
