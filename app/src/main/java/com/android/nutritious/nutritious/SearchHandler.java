@@ -1,6 +1,7 @@
 package com.android.nutritious.nutritious;
 
 import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -32,6 +33,8 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
 
     private final String LOG_TAG = SearchHandler.class.getSimpleName();
 
+    private Context mContext;
+
     @Override
     protected Void doInBackground(Void... params) {
         String[] foodData = getFood();
@@ -39,7 +42,7 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
     }
 
     public void parseJSON(){
-        RequestQueue queue = Volley.newRequestQueue();
+        RequestQueue queue = Volley.newRequestQueue(mContext);
         String query = "http://api.nal.usda.gov/usda/ndb/search/?format=json&q=butter&max=5&api_key=4AGGcqfK2u851bSOKRq1vHAHTHgG557VEt8yfYBw";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,query, null, new Response.Listener<JSONObject>() {
 
@@ -58,7 +61,7 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
                 }
             }
         });
-        queue.add(stringRequest);
+        //queue.add(stringRequest);
     }
 
     public String[] getFood() {
