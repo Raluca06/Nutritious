@@ -17,7 +17,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     // Contacts table name
     private static final String TABLE_USER = "user";
 
-    // Contacts Table Columns names
+    // User Table Columns names
     private static final String USER_ID = "id";
     private static final String USER_NAME = "name";
     private static final String USER_AGE = "age";
