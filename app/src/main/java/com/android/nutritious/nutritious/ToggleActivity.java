@@ -12,7 +12,6 @@ import android.view.MenuItem;
 
 public class ToggleActivity extends Activity {
 
-    private int toggle = 2;
     Context context = this;
 
     @Override
@@ -20,12 +19,16 @@ public class ToggleActivity extends Activity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.toggle_activity);
         Intent newActivity;
-        if(toggle == 1) {
+        if(isFirstTimeAppLaunch()) {
             newActivity = new Intent(context, OneTimeStarterActivity.class);
         } else {
             newActivity = new Intent(context, MainActivity.class);
         }
         context.startActivity(newActivity);
+    }
+
+    public boolean isFirstTimeAppLaunch(){
+        return true;
     }
 
 
