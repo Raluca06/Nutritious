@@ -4,7 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.android.nutritious.nutritious.data.UserProfileContract;
+import com.android.nutritious.nutritious.data.UserProfileContract.FoodEntry;
+import com.android.nutritious.nutritious.data.UserProfileContract.UserEntry;
 
 /**
  * Created by Ralu on 29.04.2015.
@@ -28,47 +29,47 @@ public class UserProfileDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Construct a table for todo items
-        String CREATE_USER_TABLE = "CREATE TABLE " + UserProfileContract.UserEntry.TABLE_NAME
+        String CREATE_USER_TABLE = "CREATE TABLE " + UserEntry.TABLE_NAME
                 + "("
-                + UserProfileContract.UserEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT"
-                + UserProfileContract.UserEntry.USER_NAME + " TEXT NOT NULL,"
-                + UserProfileContract.UserEntry.USER_AGE + " INTEGER, "
-                + UserProfileContract.UserEntry.USER_GENDER + " TEXT,"
-                + UserProfileContract.UserEntry.USER_WEIGHT + "INTEGER,"
-                + UserProfileContract.UserEntry.USER_HEIGHT + "INTEGER,"
-                + UserProfileContract.UserEntry.USER_TARGET_WEIGHT + "INTEGER"
-                + UserProfileContract.UserEntry.USER_HEIGHT_MEASURING_UNIT + "TEXT"
-                + UserProfileContract.UserEntry.USER_WEIGHT_MEASURING_UNIT + "TEXT"
-                + UserProfileContract.UserEntry.USER_WAKEUP_TIME + "INTEGER"
-                + UserProfileContract.UserEntry.USER_NAP_TIME + "INTEGER"
+                + UserEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT"
+                + UserEntry.USER_NAME + " TEXT NOT NULL,"
+                + UserEntry.USER_AGE + " INTEGER, "
+                + UserEntry.USER_GENDER + " TEXT,"
+                + UserEntry.USER_WEIGHT + "INTEGER,"
+                + UserEntry.USER_HEIGHT + "INTEGER,"
+                + UserEntry.USER_TARGET_WEIGHT + "INTEGER"
+                + UserEntry.USER_HEIGHT_MEASURING_UNIT + "TEXT"
+                + UserEntry.USER_WEIGHT_MEASURING_UNIT + "TEXT"
+                + UserEntry.USER_WAKEUP_TIME + "INTEGER"
+                + UserEntry.USER_NAP_TIME + "INTEGER"
                 + ")";
 
-        String CREATE_FOOD_TABLE = "CREATE TABLE " + UserProfileContract.FoodEntry.TABLE_NAME
+        String CREATE_FOOD_TABLE = "CREATE TABLE " + FoodEntry.TABLE_NAME
                 + "("
-                + UserProfileContract.FoodEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT"
-                + "FOREIGN KEY (" + UserProfileContract.FoodEntry.COLUMN_USER_KEY + ") REFERENCES" + UserProfileContract.UserEntry.TABLE_NAME + UserProfileContract.UserEntry._ID
-                + UserProfileContract.FoodEntry.COLUMN_DAY + "INTEGER NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_AMOUNT + "TEXT NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_CALORIES + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_TOTAL_FAT + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_SATURATED_FAT + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_POLYUNSATURATED_FAT + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_MONOSATURATED_FAT + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_CHOLESTEROL + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_SODIUM + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_POTASSIUM + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_TOTAL_CARBOHYDRATE + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_DIETARY_FIBER + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_SUGAR + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_PROTEIN + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_VITAMIN_A + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_VITAMIN_C + "REAL NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_CALCIUM + "INTEGER NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_IRON + "INTEGER NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_VITAMIN_D + "INTEGER NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_VITAMIN_B6 + "INTEGER NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_VITAMIN_B12 + "INTEGER NOT NULL"
-                + UserProfileContract.FoodEntry.COLUMN_MAGNESIUM + "INTEGER NOT NULL"
+                + FoodEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT"
+                + "FOREIGN KEY (" + FoodEntry.COLUMN_USER_KEY + ") REFERENCES" + UserEntry.TABLE_NAME + UserEntry._ID
+                + FoodEntry.COLUMN_DAY + "INTEGER NOT NULL"
+                + FoodEntry.COLUMN_AMOUNT + "TEXT NOT NULL"
+                + FoodEntry.COLUMN_CALORIES + "REAL NOT NULL"
+                + FoodEntry.COLUMN_TOTAL_FAT + "REAL NOT NULL"
+                + FoodEntry.COLUMN_SATURATED_FAT + "REAL NOT NULL"
+                + FoodEntry.COLUMN_POLYUNSATURATED_FAT + "REAL NOT NULL"
+                + FoodEntry.COLUMN_MONOSATURATED_FAT + "REAL NOT NULL"
+                + FoodEntry.COLUMN_CHOLESTEROL + "REAL NOT NULL"
+                + FoodEntry.COLUMN_SODIUM + "REAL NOT NULL"
+                + FoodEntry.COLUMN_POTASSIUM + "REAL NOT NULL"
+                + FoodEntry.COLUMN_TOTAL_CARBOHYDRATE + "REAL NOT NULL"
+                + FoodEntry.COLUMN_DIETARY_FIBER + "REAL NOT NULL"
+                + FoodEntry.COLUMN_SUGAR + "REAL NOT NULL"
+                + FoodEntry.COLUMN_PROTEIN + "REAL NOT NULL"
+                + FoodEntry.COLUMN_VITAMIN_A + "REAL NOT NULL"
+                + FoodEntry.COLUMN_VITAMIN_C + "REAL NOT NULL"
+                + FoodEntry.COLUMN_CALCIUM + "INTEGER NOT NULL"
+                + FoodEntry.COLUMN_IRON + "INTEGER NOT NULL"
+                + FoodEntry.COLUMN_VITAMIN_D + "INTEGER NOT NULL"
+                + FoodEntry.COLUMN_VITAMIN_B6 + "INTEGER NOT NULL"
+                + FoodEntry.COLUMN_VITAMIN_B12 + "INTEGER NOT NULL"
+                + FoodEntry.COLUMN_MAGNESIUM + "INTEGER NOT NULL"
                 +")";
         db.execSQL(CREATE_USER_TABLE);
 
@@ -77,8 +78,8 @@ public class UserProfileDBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             // Wipe older tables if existed
-            db.execSQL("DROP TABLE IF EXISTS " + UserProfileContract.UserEntry.TABLE_NAME);
-            db.execSQL("DROP TABLE IF EXISTS " + UserProfileContract.FoodEntry.TABLE_NAME);
+            db.execSQL("DROP TABLE IF EXISTS " + UserEntry.TABLE_NAME);
+            db.execSQL("DROP TABLE IF EXISTS " + FoodEntry.TABLE_NAME);
             // Create tables again
             onCreate(db);
     }
