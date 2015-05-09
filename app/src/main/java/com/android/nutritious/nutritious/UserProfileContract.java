@@ -11,16 +11,16 @@ public class UserProfileContract {
         public static final String TABLE_NAME = "user" ;
 
         // User Table Columns names
-        private static final String USER_NAME = "name";
-        private static final String USER_AGE = "age";
-        private static final String USER_GENDER = "gender";
-        private static final String USER_WEIGHT = "weight";
-        private static final String USER_HEIGHT = "height";
-        private static final String USER_TARGET_WEIGHT = "target_weight";
-        private static final String USER_HEIGHT_MEASURING_UNIT = "height_measuring_unit";
-        private static final String USER_WEIGHT_MEASURING_UNIT = "weight_measuring_unit";
-        private static final String USER_WAKEUP_TIME = "wakeup_time";
-        private static final String USER_NAP_TIME = "nap_time";
+        public static final String USER_NAME = "name";
+        public static final String USER_AGE = "age";
+        public static final String USER_GENDER = "gender";
+        public static final String USER_WEIGHT = "weight";
+        public static final String USER_HEIGHT = "height";
+        public static final String USER_TARGET_WEIGHT = "target_weight";
+        public static final String USER_HEIGHT_MEASURING_UNIT = "height_measuring_unit";
+        public static final String USER_WEIGHT_MEASURING_UNIT = "weight_measuring_unit";
+        public static final String USER_WAKEUP_TIME = "wakeup_time";
+        public static final String USER_NAP_TIME = "nap_time";
 
     }
 
@@ -31,6 +31,7 @@ public class UserProfileContract {
         //Food Table Columns names
         public static final String COLUMN_USER_KEY = "user_id";
         public static final String COLUMN_DAY = "day";
+        public static final String COLUMN_AMOUNT = "amount";
         public static final String COLUMN_CALORIES = "calories";
         public static final String COLUMN_TOTAL_FAT = "total_fat";
         public static final String COLUMN_SATURATED_FAT = "saturated_fat";

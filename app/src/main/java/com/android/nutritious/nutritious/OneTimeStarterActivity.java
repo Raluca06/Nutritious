@@ -8,13 +8,13 @@ import android.view.MenuItem;
 
 public class OneTimeStarterActivity extends ActionBarActivity {
 
-    private DatabaseManager dbManager;
+    private UserProfileDBHelper dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_time_starter);
-       // dbManager = new DatabaseManager(mContext);
+       // dbManager = new UserProfileDBHelper(mContext);
     }
 
 
