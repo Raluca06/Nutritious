@@ -1,4 +1,4 @@
-package com.android.nutritious.nutritious;
+package com.android.nutritious.nutritious.data;
 
 import android.provider.BaseColumns;
 

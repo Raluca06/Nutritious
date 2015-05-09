@@ -1,8 +1,10 @@
-package com.android.nutritious.nutritious;
+package com.android.nutritious.nutritious.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.android.nutritious.nutritious.data.UserProfileContract;
 
 /**
  * Created by Ralu on 29.04.2015.
