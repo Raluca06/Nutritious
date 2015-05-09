@@ -11,7 +11,10 @@
     <string name="title_activity_backend">BackendActivity</string>
     <string name="message_no_internet">Cannot establish Internet Connection</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_onetimestarter">OneTimeStarterActivity</string>
     <string name="title_activity_one_time_starter">OneTimeStarterActivity</string>
     <string name="message_error">An error has occurred. Please try again.</string>
+    <string name="title_activity_toggle">ToggleActivity</string>
 
 </resources>
