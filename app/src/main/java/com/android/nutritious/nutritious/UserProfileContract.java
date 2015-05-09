@@ -21,7 +21,6 @@ public class UserProfileContract {
         private static final String USER_WEIGHT_MEASURING_UNIT = "weight_measuring_unit";
         private static final String USER_WAKEUP_TIME = "wakeup_time";
         private static final String USER_NAP_TIME = "nap_time";
-        private static final String USER_AM_PM = "am_pm";
 
     }
 
