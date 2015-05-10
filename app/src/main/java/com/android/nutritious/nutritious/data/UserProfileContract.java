@@ -7,6 +7,11 @@ import android.provider.BaseColumns;
  */
 public class UserProfileContract {
 
+    public static final String AUTHORITY = "com.android.nutritious.nutritious.data";
+    public static final String SCHEMA = "CONTENT";
+
+    public static final String USER_URI = "";
+
     public static final class UserEntry implements BaseColumns{
         public static final String TABLE_NAME = "user" ;
 
@@ -29,9 +34,7 @@ public class UserProfileContract {
         public static final String TABLE_NAME = "food";
 
         //Food Table Columns names
-        public static final String COLUMN_USER_KEY = "user_id";
-        public static final String COLUMN_DAY = "day";
-        public static final String COLUMN_AMOUNT = "amount";
+        public static final String COLUMN_DISH_NAME = "dish_name";
         public static final String COLUMN_CALORIES = "calories";
         public static final String COLUMN_TOTAL_FAT = "total_fat";
         public static final String COLUMN_SATURATED_FAT = "saturated_fat";
@@ -52,5 +55,16 @@ public class UserProfileContract {
         public static final String COLUMN_CALCIUM = "calcium";
         public static final String COLUMN_MAGNESIUM = "magnesium";
         public static final String COLUMN_IRON = "iron";
+    }
+
+    public static final class MealsEntry implements BaseColumns{
+        public static final String TABLE_NAME = "meals";
+
+        //Meals Table Columns names
+        public static final String COLUMN_FOOD_KEY = "food_id";
+        public static final String COLUMN_USER_KEY = "user_id";
+        public static final String COLUMN_MEAL_TYPE = "meal_type";
+        public static final String COLUMN_MEAL_DATE = "date";
+        public static final String COLUMN_FOOD_AMOUNT = "amount";
     }
 }
