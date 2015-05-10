@@ -48,6 +48,7 @@ public class UserProfileDBHelper extends SQLiteOpenHelper {
         String CREATE_FOOD_TABLE = "CREATE TABLE " + FoodEntry.TABLE_NAME
                 + "("
                 + FoodEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + FoodEntry.COLUMN_DISH_API_ID + "INTEGER, "
                 + FoodEntry.COLUMN_DISH_NAME + "TEXT, "
                 + FoodEntry.COLUMN_CALORIES + "REAL NOT NULL, "
                 + FoodEntry.COLUMN_TOTAL_FAT + "REAL NOT NULL, "

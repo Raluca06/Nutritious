@@ -1,5 +1,6 @@
 package com.android.nutritious.nutritious.data;
 
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
@@ -8,9 +9,12 @@ import android.provider.BaseColumns;
 public class UserProfileContract {
 
     public static final String AUTHORITY = "com.android.nutritious.nutritious.data";
-    public static final String SCHEMA = "CONTENT";
+    public static final String SCHEMA = "content";
+    public static final String PATH_USER = "user";
+    public static final String PATH_FOOD = "food";
+    public static final String PATH_MEALS = "meals";
 
-    public static final String USER_URI = "";
+    public static final Uri BASE_CONTENT_URI = Uri.parse(SCHEMA + "://" + AUTHORITY);
 
     public static final class UserEntry implements BaseColumns{
         public static final String TABLE_NAME = "user" ;
@@ -35,6 +39,7 @@ public class UserProfileContract {
 
         //Food Table Columns names
         public static final String COLUMN_DISH_NAME = "dish_name";
+        public static final String COLUMN_DISH_API_ID = "dish_api_id";
         public static final String COLUMN_CALORIES = "calories";
         public static final String COLUMN_TOTAL_FAT = "total_fat";
         public static final String COLUMN_SATURATED_FAT = "saturated_fat";
