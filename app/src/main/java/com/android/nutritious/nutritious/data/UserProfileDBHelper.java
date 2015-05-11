@@ -29,7 +29,7 @@ public class UserProfileDBHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Construct a table for todo items
+
         String CREATE_USER_TABLE = "CREATE TABLE " + UserEntry.TABLE_NAME
                 + "("
                 + UserEntry._ID + "INTEGER PRIMARY KEY AUTOINCREMENT"

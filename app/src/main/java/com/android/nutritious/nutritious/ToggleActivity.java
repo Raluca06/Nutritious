@@ -3,11 +3,16 @@ package com.android.nutritious.nutritious;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.io.File;
 
 
 public class ToggleActivity extends Activity {
@@ -28,6 +33,10 @@ public class ToggleActivity extends Activity {
     }
 
     public boolean isFirstTimeAppLaunch(){
+        File file = getDatabasePath("userManager.db");
+        if (file.exists()) {
+            return false;
+        }
         return true;
     }
 
