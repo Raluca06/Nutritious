@@ -1,0 +1,11 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_first_time"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.nutritious.nutritious.FirstTimeAppLaunchFragment">
+
+    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+</LinearLayout>

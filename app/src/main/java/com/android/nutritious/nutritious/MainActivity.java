@@ -9,21 +9,40 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.File;
+
 
 public class MainActivity extends ActionBarActivity {
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
+        if(isFirstTimeAppLaunch()) {
+            setContentView(R.layout.fragment_first_time_app_launch);
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.container_first_time, new FirstTimeAppLaunchFragment())
+                        .commit();
+            }
+        } else {
+            setContentView(R.layout.fragment_main);
+//            if (savedInstanceState == null) {
+//                getSupportFragmentManager().beginTransaction()
+//                        .add(R.id.container, new MainActivity())
+//                        .commit();
+//            }
         }
+
         new SearchHandler().execute(null, null, null);
+    }
+
+    public boolean isFirstTimeAppLaunch(){
+        File file = getDatabasePath("userManager.db");
+        if (file.exists()) {
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -46,22 +65,6 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
     }
 
 }
