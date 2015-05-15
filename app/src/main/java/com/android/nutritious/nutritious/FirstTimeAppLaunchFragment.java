@@ -20,6 +20,4 @@ public class FirstTimeAppLaunchFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_first_time_app_launch, container, false);
     }
 
-
-
 }
