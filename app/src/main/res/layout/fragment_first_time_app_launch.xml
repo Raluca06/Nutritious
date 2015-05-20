@@ -5,13 +5,28 @@
     android:numColumns="auto_fit"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.android.nutritious.nutritious.FirstTimeAppLaunchFragment">
+    tools:context="com.android.nutritious.nutritious.FirstTimeAppLaunchFragment"
+    android:clickable="false">
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:id="@+id/imageView"
-        android:src="@drawable/ic_nutritious_launcher"/>
+        android:src="@drawable/ic_nutritious_launcher"
+        android:layout_marginTop="67dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/button"
+        android:layout_above="@+id/nameFirstTime"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
 
     <TextView
         android:layout_width="match_parent"
@@ -23,14 +38,6 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_above="@+id/nameFirstTime"
-        android:layout_toRightOf="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView" />
+
 
 </RelativeLayout>
