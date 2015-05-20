@@ -26,15 +26,15 @@ public class MainActivity extends ActionBarActivity {
                         .commit();
             }
         } else {
-            setContentView(R.layout.fragment_main);
-//            if (savedInstanceState == null) {
-//                getSupportFragmentManager().beginTransaction()
-//                        .add(R.id.container, new MainActivity())
-//                        .commit();
-//            }
+            setContentView(R.layout.fragment_main_menu);
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.content_main_fragment, new MainMenuFragment())
+                        .commit();
+            }
         }
 
-        new SearchHandler().execute(null, null, null);
+        //new SearchHandler().execute(null, null, null);
     }
 
     public boolean isFirstTimeAppLaunch(){
