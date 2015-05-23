@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="20dp"
-    android:layout_width="40dp">
-    <item>
-        <shape android:shape="line">
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_height="4dp"-->
+    <!--android:layout_width="2dp">-->
+    <!--<item>-->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
             <stroke android:width="2dp" android:color="#00E5EE" />
             <solid android:color="#00000000" />
-            <padding android:bottom="@dimen/firstScreenPaddingBottom" />
             <padding android:left="@dimen/firstScreenPaddingLeft" />
         </shape>
 
-    </item>
-</layer-list>
+    <!--</item>-->
+<!--</layer-list>-->
