@@ -36,7 +36,11 @@
         android:id="@+id/nameFirstTime"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/imageView" />
+        android:layout_below="@+id/imageView"
+        android:inputType="text"
+        android:clickable="true" />
+        <!--android:background="@drawable/linesample"-->
+
 
 
 

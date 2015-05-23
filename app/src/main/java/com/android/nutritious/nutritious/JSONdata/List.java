@@ -1,6 +1,7 @@
-package com.android.nutritious.nutritious;
+package com.android.nutritious.nutritious.JSONdata;
 
 import java.util.ArrayList;
+
 import com.google.gson.annotations.Expose;
 
 public class List {

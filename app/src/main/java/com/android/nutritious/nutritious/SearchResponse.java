@@ -1,6 +1,8 @@
 package com.android.nutritious.nutritious;
 
 import javax.annotation.Generated;
+
+import com.android.nutritious.nutritious.JSONdata.List;
 import com.google.gson.annotations.Expose;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
