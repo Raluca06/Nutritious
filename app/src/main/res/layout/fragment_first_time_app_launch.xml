@@ -43,7 +43,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView"
         android:background="@drawable/linesample"
-        android:paddingLeft="@dimen/firstScreenPaddingLeft"/>
+        android:paddingLeft="@dimen/firstScreenPaddingLeft"
+        android:textSize="@dimen/textSize"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -54,7 +55,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="@string/age"
-        android:background="@drawable/linesample"/>
+        android:background="@drawable/linesample"
+        android:textSize="@dimen/textSize"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -64,7 +66,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="@string/weight"
-        android:background="@drawable/linesample"/>
+        android:background="@drawable/linesample"
+        android:textSize="@dimen/textSize"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -74,7 +77,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="@string/targetWeight"
-        android:background="@drawable/linesample"/>
+        android:background="@drawable/linesample"
+        android:textSize="@dimen/textSize"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -84,7 +88,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="@string/height"
-        android:background="@drawable/linesample"/>
+        android:background="@drawable/linesample"
+        android:textSize="@dimen/textSize"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -94,7 +99,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:hint="@string/wakeUpTime"
-        android:background="@drawable/linesample"/>
+        android:background="@drawable/linesample"
+        android:textSize="@dimen/textSize"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -104,7 +110,8 @@
         android:background="@drawable/linesample"
         android:layout_below="@+id/editText4"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/textSize"/>
 
     <Spinner
         android:layout_width="match_parent"

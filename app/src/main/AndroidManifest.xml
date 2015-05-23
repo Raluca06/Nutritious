@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailActivity"
+            android:name=".FoodFinderActivity"
             android:label="@string/title_activity_detail" >
         </activity>
     </application>

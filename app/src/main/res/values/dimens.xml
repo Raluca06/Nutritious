@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="firstScreenPaddingLeft">20dp</dimen>
     <dimen name="firstScreenPaddingBottom">25dp</dimen>
+    <dimen name="textSize">25sp</dimen>
 </resources>

@@ -1,15 +1,9 @@
 package com.android.nutritious.nutritious;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
-import java.io.File;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -26,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
                         .commit();
             }
         } else {
-            setContentView(R.layout.fragment_main_menu);
+            setContentView(R.layout.fragment_mainmenu);
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.content_main_fragment, new MainMenuFragment())
@@ -38,11 +32,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public boolean isFirstTimeAppLaunch(){
-        File file = getDatabasePath("userManager.db");
-        if (file.exists()) {
+//        File file = getDatabasePath("userManager.db");
+//        if (file.exists()) {
             return false;
-        }
-        return true;
+//        }
+//        return true;
     }
 
     @Override
