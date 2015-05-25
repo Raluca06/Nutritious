@@ -14,12 +14,37 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".FoodFinderActivity"
             android:label="@string/title_activity_detail" >
+        </activity>
+        <activity
+            android:name=".PersonalProfileActivity"
+            android:label="@string/title_activity_personal_profile"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.android.nutritious.nutritious.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DrinksCounterActivity"
+            android:label="@string/title_activity_drinks_counter"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.android.nutritious.nutritious.MainActivity" />
+        </activity>
+        <activity
+            android:name=".StatisticsActivity"
+            android:label="@string/title_activity_statistics"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.android.nutritious.nutritious.MainActivity" />
         </activity>
     </application>
 

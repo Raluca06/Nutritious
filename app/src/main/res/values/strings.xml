@@ -45,5 +45,8 @@
     </string-array>
     <string name="am">AM</string>
     <string name="pm">PM</string>
+    <string name="title_activity_personal_profile">PersonalProfileActivity</string>
+    <string name="title_activity_drinks_counter">DrinksCounterActivity</string>
+    <string name="title_activity_statistics">StatisticsActivity</string>
 
 </resources>
