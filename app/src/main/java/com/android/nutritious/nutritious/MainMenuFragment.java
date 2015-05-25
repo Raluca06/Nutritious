@@ -26,7 +26,7 @@ public class MainMenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_mainmenu, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main_menu, container, false);
         ArrayList<String> menuOptions = new ArrayList<String>(Arrays.asList(MENU_OPTIONS));
         mMainMenuAdapter = new ArrayAdapter<String>(
                 getActivity(), R.layout.fragment_list_item_mainmenu, R.id.list_item_mainMenu, menuOptions);

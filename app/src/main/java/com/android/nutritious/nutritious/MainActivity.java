@@ -20,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
                         .commit();
             }
         } else {
-            setContentView(R.layout.fragment_mainmenu);
+            setContentView(R.layout.fragment_main_menu);
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.content_main_fragment, new MainMenuFragment())
