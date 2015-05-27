@@ -15,7 +15,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft = "5dp"
         android:layout_alignParentTop="true"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/ic_launcher"
+        />
 
     <TextView
         android:id="@+id/product_name"
@@ -85,12 +86,13 @@
         android:id="@+id/add_cart"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/matching_product"
         android:layout_alignParentRight="true"
         android:layout_marginRight ="20dp"
         android:layout_marginTop ="10dp"
-        android:gravity="center"
-        android:drawableLeft="@drawable/abc_btn_check_to_on_mtrl_000"
-        style="?android:attr/borderlessButtonStyle" />
+        android:gravity="center_horizontal|top"
+        android:drawableLeft="@drawable/ic_action"
+        style="?android:attr/borderlessButtonStyle"
+        android:clickable="true"
+        android:elevation="@android:dimen/thumbnail_height" />
 
 </RelativeLayout>
