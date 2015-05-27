@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.android.nutritious.nutritious"
-        minSdkVersion 11
+        minSdkVersion 10
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -37,6 +37,7 @@ dependencies {
     compile 'commons-lang:commons-lang:2.6'
     compile files('libs/android-support-v4.jar')
     compile 'com.google.code.gson:gson:2.3'
+    compile 'com.github.shell-software:fab:1.1.1'
     compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
         // exclusion is not necessary, but generally a good idea.
         exclude group: 'com.google.android', module: 'support-v4'
