@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.android.nutritious.nutritious.JSONdata.Item;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -14,6 +15,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -22,6 +24,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -29,16 +32,16 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 /**
  * Created by Ralu on 15.03.2015.
  */
-public class SearchHandler extends AsyncTask<Void, Void, Void>{
+public class SearchHandler extends AsyncTask<String, Void, ArrayList>{
 
     private final String LOG_TAG = SearchHandler.class.getSimpleName();
 
     private Context mContext;
 
     @Override
-    protected Void doInBackground(Void... params) {
-        String[] foodData = getFood();
-        return null;
+    protected ArrayList<Item> doInBackground(String... params) {
+        ArrayList<Item> foodData = getFood(params);
+        return foodData;
     }
 
     public void parseJSON(){
@@ -48,7 +51,7 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
 
             @Override
             public void onResponse(JSONObject jsonObject) {
-                JSONObject object= new Gson().fromJson(jsonObject.toString(), JSONObject.class);
+                JSONObject object = new Gson().fromJson(jsonObject.toString(), JSONObject.class);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -64,24 +67,23 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
         //queue.add(stringRequest);
     }
 
-    public String[] getFood() {
+    public ArrayList<Item> getFood(String... params) {
 
         HttpURLConnection urlConnection = null;
         BufferedReader reader = null;
 
         String foodSearchJsonString = null;
-        String[] foodData = new String[10];
+        ArrayList<Item> foodData = new ArrayList<Item>();
         try {
 
             Uri.Builder urlBuilder = new Uri.Builder();
             // urlBuilder.scheme("http://api.nal.usda.gov/").appendPath("usda").appendPath("ndb").appendPath("search").appendQueryParameter("q", params[0]).appendQueryParameter("mode", "json")
             //       .appendQueryParameter("units", "metric").appendQueryParameter("cnt", "7");
             // URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7");
-            URL url = new URL("http://api.nal.usda.gov/usda/ndb/search/?format=json&q=butter&max=5&api_key=4AGGcqfK2u851bSOKRq1vHAHTHgG557VEt8yfYBw");
+            URL url = new URL("http://api.nal.usda.gov/usda/ndb/search/?format=json&q=butter&max=20&api_key=4AGGcqfK2u851bSOKRq1vHAHTHgG557VEt8yfYBw");
             // URL url = new URL(urlBuilder.toString());
             Log.v(LOG_TAG, "Built URL: " + url.toString());
 
-            // Create the request to OpenWeatherMap, and open the connection
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
@@ -90,8 +92,7 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
             InputStream inputStream = urlConnection.getInputStream();
             StringBuffer buffer = new StringBuffer();
             if (inputStream == null) {
-                // Nothing to do.
-                //foodSearchJsonString = null;
+                foodData = null;
             }
             reader = new BufferedReader(new InputStreamReader(inputStream));
 
@@ -105,22 +106,21 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
 
             if (buffer.length() == 0) {
                 // Stream was empty.  No point in parsing.
-                foodSearchJsonString = null;
+                foodData = null;
             }
             foodSearchJsonString = buffer.toString();
 
             Log.v(LOG_TAG, "Food JSON String: " + foodSearchJsonString);
-            // foodData = getWeatherDataFromJson(foodSearchJsonString, 7);
+            //foodData = getWeatherDataFromJson(foodSearchJsonString, 7);
 
-        } catch (IOException e) {
-            Log.e("SearchHandler", "Error ", e);
-            // If the code didn't successfully get the weather data, there's no point in attempting
-            // to parse it.
-            //foodSearchJsonString = null;
         }
-//        catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+        catch (IOException e) {
+            Log.e("SearchHandler", "Error ", e);
+            // If the code didn't successfully get the data, there's no point in attempting
+            // to parse it.
+            foodData = null;
+        }
+
         finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -134,6 +134,7 @@ public class SearchHandler extends AsyncTask<Void, Void, Void>{
             }
         }
 
-        return foodData;
+//        return foodData;
+        return null;
     }
 }
