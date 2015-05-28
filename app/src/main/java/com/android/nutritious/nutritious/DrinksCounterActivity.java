@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 
 
 public class DrinksCounterActivity extends ActionBarActivity {
@@ -11,7 +12,7 @@ public class DrinksCounterActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drinks_counter);
+        setContentView(R.layout.fragment_drinks_counter);
     }
 
 
