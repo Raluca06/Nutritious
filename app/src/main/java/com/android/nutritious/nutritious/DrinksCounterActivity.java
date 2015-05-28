@@ -13,6 +13,11 @@ public class DrinksCounterActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_drinks_counter);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.drinksCounterLayout, new DrinksCounterFragment())
+                    .commit();
+        }
     }
 
 

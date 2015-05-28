@@ -44,23 +44,27 @@ public class DrinksCounterFragment extends Fragment {
                 switch (position){
                     case 0:{
 //                        Intent intent = new Intent(getActivity(), FoodFinderActivity.class).putExtra(Intent.EXTRA_TEXT, menuOption);
-//                        Toast.makeText()
+//
 //                        startActivity(intent);
+                        Toast.makeText(getActivity(), String.valueOf(menuOption), Toast.LENGTH_SHORT).show();
                     }
                     break;
                     case 1:{
-                        Intent intent = new Intent(getActivity(), PersonalProfileActivity.class).putExtra(Intent.EXTRA_TEXT, menuOption);
-                        startActivity(intent);
+//                        Intent intent = new Intent(getActivity(), PersonalProfileActivity.class).putExtra(Intent.EXTRA_TEXT, menuOption);
+//                        startActivity(intent);
+                        Toast.makeText(getActivity(), String.valueOf(menuOption), Toast.LENGTH_SHORT).show();
                     }
                     break;
                     case 2:{
-                        Intent intent = new Intent(getActivity(), DrinksCounterActivity.class).putExtra(Intent.EXTRA_TEXT, menuOption);
-                        startActivity(intent);
+//                        Intent intent = new Intent(getActivity(), DrinksCounterActivity.class).putExtra(Intent.EXTRA_TEXT, menuOption);
+//                        startActivity(intent);
+                        Toast.makeText(getActivity(), String.valueOf(menuOption), Toast.LENGTH_SHORT).show();
                     }
                     break;
                     default:{
-                        Intent intent = new Intent(getActivity(), StatisticsActivity.class).putExtra(Intent.EXTRA_TEXT, menuOption);
-                        startActivity(intent);
+//                        Intent intent = new Intent(getActivity(), StatisticsActivity.class).putExtra(Intent.EXTRA_TEXT, menuOption);
+//                        startActivity(intent);
+                        Toast.makeText(getActivity(), String.valueOf(menuOption), Toast.LENGTH_SHORT).show();
                     }
 
                     break;
