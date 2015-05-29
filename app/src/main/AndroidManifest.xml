@@ -50,14 +50,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.android.nutritious.nutritious.MainActivity" />
         </activity>
-        <activity
-            android:name=".LiquidsCounterActivity"
-            android:label="@string/title_activity_liquids_counter"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.android.nutritious.nutritious.MainActivity" />
-        </activity>
     </application>
 
 </manifest>
