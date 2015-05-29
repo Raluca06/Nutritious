@@ -4,27 +4,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 
 
-public class DrinksCounterActivity extends ActionBarActivity {
+public class LiquidsCounterActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drinks);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.drinksCounter, new DrinksCounterFragment())
-                    .commit();
-        }
+        setContentView(R.layout.activity_liquids_counter);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_drinks_counter, menu);
+        getMenuInflater().inflate(R.menu.menu_liquids_counter, menu);
         return true;
     }
 

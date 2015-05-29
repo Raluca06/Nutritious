@@ -48,5 +48,6 @@
     <string name="title_activity_personal_profile">PersonalProfileActivity</string>
     <string name="title_activity_drinks_counter">DrinksCounterActivity</string>
     <string name="title_activity_statistics">StatisticsActivity</string>
+    <string name="title_activity_liquids_counter">LiquidsCounterActivity</string>
 
 </resources>
