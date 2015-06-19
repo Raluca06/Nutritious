@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.File;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -32,11 +34,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public boolean isFirstTimeAppLaunch(){
-//        File file = getDatabasePath("userManager.db");
-//        if (file.exists()) {
+        File file = getDatabasePath("userManager.db");
+        if (file.exists()) {
             return false;
-//        }
-//        return true;
+        }
+        return true;
     }
 
     @Override
